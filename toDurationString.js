@@ -7,6 +7,7 @@ Number.prototype.toDurationString = function (sourceUnit = "s", options) {
         h: {d: 3600000, u: 86400000, long: "hours", inputScale: 3600000},
         d: {d: 86400000, u: null, long: "days", inputScale: 8.64e+7},
     };
+
     const defaults = {
         maxOutputLevel: "auto",
         includeMilliseconds: false,
@@ -14,12 +15,14 @@ Number.prototype.toDurationString = function (sourceUnit = "s", options) {
         addLabels: false,
         delimiter: ":"
     };
+
     //get options
     let maxOutputLevel = options.maxOutputLevel || defaults.maxOutputLevel;
-    const includeMilliseconds = options.includeMilliseconds || defaults.includeMilliseconds;
-    const padZeros = options.padZeros || defaults.padZeros;
-    const addLabels = options.addLabels || defaults.addLabels;
+    const includeMilliseconds = (options.includeMilliseconds === undefined || options.includeMilliseconds === null) ? defaults.includeMilliseconds : options.includeMilliseconds;
+    const padZeros = (options.padZeros === undefined || options.padZeros === null) ? defaults.padZeros : options.padZeros;
+    const addLabels = (options.addLabels === undefined || options.addLabels === null) ? defaults.addLabels : options.addLabels;
     const delimiter = options.delimiter || defaults.delimiter;
+
     //set the order of the output string
     const levelOrder = ["s", "m", "h", "d"];
 
