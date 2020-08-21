@@ -8,6 +8,8 @@ document.addEventListener('DOMContentLoaded', function (event) {
 
     document.querySelectorAll("input, select").forEach(elm => elm.addEventListener("input", updateDuration));
 
+    updateDuration();
+
     function updateDuration() {
         document.getElementById("elapsedTime").innerText =
             Number(document.getElementById("inputNum").value)

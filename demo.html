@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>toDurationString demo</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="toDurationString.js" type="application/javascript"></script>
+    <script src="demo.js"></script>
+</head>
+<body>
+<div class="optionsWrap">
+    <h1>toDurationString</h1>
+    <h2>Usage</h2>
+    <label>Duration to convert<input type="number" id="inputNum" value="12345"></label>
+    <p class="comment">//Number.toDurationString();</p>
+    <label>Unit<select id="inputUnit">
+        <option value="ms">ms</option>
+        <option value="s" selected>s</option>
+        <option value="m">m</option>
+        <option value="h">h</option>
+        <option value="d">d</option>
+    </select></label>
+    <p class="comment">//Number.toDurationString(unit::string);</p>
+    <label>Max output level<select id="inputMax">
+        <option value="auto" selected>auto</option>
+        <option value="s">s</option>
+        <option value="m">m</option>
+        <option value="h">h</option>
+        <option value="d">d</option>
+    </select></label>
+    <p class="comment">//Number.toDurationString(unit::string, {maxOutputLevel: unit::string});</p>
+    <label>Delimiter<input type="text" id="inputDelimiter" value=":"></label>
+    <p class="comment">//Number.toDurationString(unit, {delimiter: delimiter::string});</p>
+    <label>Add unit labels<input type="checkbox" id="inputLabels"></label>
+    <p class="comment">//Number.toDurationString(unit, {addLabels: boolean});</p>
+    <label>Include milliseconds<input type="checkbox" id="inputMilliseconds"></label>
+    <p class="comment">//Number.toDurationString(unit, {inputMilliseconds: boolean});</p>
+    <label>Pad zeros<input type="checkbox" id="inputPad" checked></label>
+    <p class="comment">//Number.toDurationString(unit, {padZeroes: boolean});</p>
+    <h2>Output</h2>
+</div>
+<p id="elapsedTime"></p>
+</body>
+</html>
